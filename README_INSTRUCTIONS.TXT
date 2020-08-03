@@ -10,3 +10,9 @@ TO RUN THE SERVER:
 TO CREATE NEW APP INSIDE THE PROJECT:
   > python manage.py startapp blog
   > tree (to see the hierarchy)
+
+TO ADD APPS INTO SETTINGS:
+  - look inside blogs/apps.py and grab the 'BlogConfig' name
+  - then open django_blog/settings.py and add a path to that path configuration
+  - INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
