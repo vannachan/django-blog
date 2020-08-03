@@ -56,3 +56,11 @@ CREATE NEW POST:
   > user.post_set.all()
   TO CREATE USING post_set, DON'T NEED TO SAVE():
     > user.post_set.create(title='Blog 3', content='Third post content!')
+
+THIRD PARTY APP TO MAKE FORMS NICER:
+  - deactivate virtual env
+  > pip install django-crispy-forms
+  - activate virtual env
+  - add in settings.py for INSTALLED_APPS
+  - change to bootstrap4 for css: 
+  CRISPY_TEMPLATE_PACK = 'bootstrap4'
