@@ -1,9 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from django.http import HttpResponse
 
 from .models import Post  # import Post class from models
-
-# Create your views here.
 
 # Dummy data:
 # posts = [
@@ -28,7 +27,15 @@ def home(request):
   }
   return render(request, 'blog/home.html', context)
 
-def about(request):
+class PostListView(ListView):
+  model = Post
+  template_name = 'blog/home.html' # by default, it will look for <app>/<model>_<viewtype>.html
+  context_object_name = 'posts' # need to do this because home.html is asking for posts
+  ordering = ['-date_posted'] # adding - will do DESC order instead
 
+class PostDetailView(DetailView):
+  model = Post
+
+def about(request):
   # return HttpResponse('<h1>Blog About</h1>')
   return render(request, 'blog/about.html', {'title': 'About'})
