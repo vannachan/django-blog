@@ -64,3 +64,7 @@ THIRD PARTY APP TO MAKE FORMS NICER:
   - add in settings.py for INSTALLED_APPS
   - change to bootstrap4 for css: 
   CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+PROFILE IMAGE IN FORM:
+  - need to add enctype to make sure image info is sent properly in form
+    <form method="POST" enctype="multipart/form-data">
